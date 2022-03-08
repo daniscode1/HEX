@@ -11,7 +11,7 @@ cd HEX
 # Usage
 ```
 HEX HELP
-python3 hex.py [commands: -help, -version, -random-num, -random-country, -random-name, -random-gender, -profile]
+python3 hex.py [commands: -help, -version, -random-num, -random-country, -random-name, -random-gender, -random-phone-number, -random-birthday]
 ```
 
 # Owner & License

@@ -54,28 +54,43 @@ def gender():
 
     # Return the variable
     return gender
+def phone_number():
+    # +1 50 657 8193
+    # Read the file with all the country codes
+    file = open('hex/data/country_codes', 'r')
+    country_code = file.read()
+    file.close()
 
-#################### PROFILES ####################
-def profile():
-    # Get all the random data and save it in to variables#
-    ran_gender = gender()
-    ran_name = name()
-    ran_country = country()
+    # Generate a random country code
+    # Create a list of country codes
+    country_codes = country_code.split('\n')
 
-    # Return the profile
-    return f'''
-    ########### 
-    #(. ❛ ᴗ ❛.)#
-    ###########
+    # Generate a random country code
+    random_country_code = random.choice(country_codes)
 
-    \033[2;31;43m Name \033[0;0m
-    {ran_name}
-    \033[2;31;43m Gender \033[0;0m
-    {ran_gender}
-    \033[2;31;43m From \033[0;0m
-    {ran_country}
-    '''
-#################### END ####################
+    # Generate the first two numbers
+    gen0 = random.randint(10, 99)
+
+    # Generate the second three numbers
+    gen1 = random.randint(100, 999)
+
+    # Generate the last four numbers
+    gen2 = random.randint(1000, 9999)
+
+    # Combine all the numbers together & return them
+    return f'{str(random_country_code)} {int(gen0)} {int(gen1)} {int(gen2)}'
+def birth():
+    # Random Generate Date
+    date = random.randint(1, 28)
+
+    # Random Generate Month
+    month = random.randint(1, 12)
+
+    # Random Generate Year
+    year = random.randint(1980, 2010)
+
+    # Combine them together & return them
+    return f'{date}/{month}/{year}'
 ################################################# END ##################################################
 
 # Get the user arguments
@@ -91,7 +106,9 @@ if len(usr_argv) >= 2:
         # Print out help info
         print('''
         HEX HELP
-        python3 hex.py [commands: -help, -version, -random-num, -random-country, -random-name, -random-gender, -profile]
+        python3 hex.py [commands: -help, -version, -random-num, 
+        -random-country, -random-name, -random-gender, -random-phone-number,
+        -random-birthday]
         ''')
     elif usr_command == '-version':
         # Read the file
@@ -111,8 +128,10 @@ if len(usr_argv) >= 2:
         print(name())
     elif usr_command == '-random-gender':
         print(gender())
-    elif usr_command == '-profile':
-        print(profile())
+    elif usr_command == '-random-phone-number':
+        print(phone_number())
+    elif usr_command == '-random-birthday':
+        print(birth())
     else:
         error('Your commend is not valid, type -help for help')
 else:
