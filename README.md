@@ -1,6 +1,13 @@
 # HEX
 Hex is a tool used for generating random numbers.
 
+# Download
+```
+git clone https://github.com/daniscode1/HEX
+
+cd HEX
+```
+
 # Usage
 ```
 HEX HELP
