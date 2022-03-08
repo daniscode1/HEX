@@ -1,5 +1,5 @@
 # HEX
-Hex is a tool used for generating random numbers.
+Hex is a tool used for generating random stuff
 
 # Download
 ```
